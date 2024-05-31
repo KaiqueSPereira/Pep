@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pep | Login</title>
+    <link rel="shortcut icon" href="/img/telainicio/icon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM Sans" >
+    <link rel="stylesheet" type="text/css" href="../css/global/Global.css">
+    <link rel="stylesheet" type="text/css" href="../css/login/login.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+
+<body>
+	
+    <main class="container-main">
+        <div class="container-esquerda">
+            <h1>Sua <span style="color: #e90d0d;">Saúde</span> em um só local </h1>
+            <img class="img-login" draggable="false" src="/prontuario-eletronico-pessoal/public/img/Icons/Iconprotuário.png" alt="Icone de ">
+        </div>
+        <div class="container-direita">
+            <div class="container-form">
+                <form  th:action="@{/login}" method="post">
+                    <!-- error message -->
+					<div th:if="${param.error}">
+						<div class="alert alert-danger">E-mail ou senha invalido,verifique e tente novmente.</div>
+					</div>
+					<!-- logout message -->
+					<div th:if="${param.logout}">
+						<div class="alert alert-info">Você acaba de sair do seu usuário.</div>
+					</div>
+                    <h1>Entrar</h1>
+                    <p>Faça login para acessar o sistema</p>
+                    <div>
+					    <label for="username">E-mail</label>
+					    <input type="email" class="form-control" id="username" 
+					    name="username" placeholder="E-mail" autofocus="autofocus">
+				    </div>
+				    <div>
+					    <label for="password">Senha</label>
+					    <input type="password", id="password" 
+					    name="password" class="form-control" placeholder="Senha">
+				    </div>
+				    <div>
+						<div class="row">
+							<div class="col-sm-6 col-sm-offset-3">
+								<input type="submit" name="login-submit" id="login-submit" class="login_submit" 
+									class="form-control btn btn-primary" value="Log In" />
+							</div>
+						</div>
+					</div>
+                </form>
+            </div>
+            <div class="suporte">
+				<a href="/" th:href="@{/registration}"> Cadastre-se aqui !</a>
+			</div>
+			<div class="suporte">
+				<a href="/" th:href="@{/recover}">Esqueceu a Senha ?</a>
+			</div>
+        </div>
+    </main>
+</body>
+
+</html>

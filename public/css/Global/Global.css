@@ -5,11 +5,16 @@
 }
 
 body {
-    background-color: rgb(196, 238, 248);
+    background-color: #ffdd9a;
     overflow-x: hidden;
 }
 
-header {
+.icon {
+    width: 20px;
+    height: 20px;
+}
+
+.header {
     background: #000;
     min-height: 80px;
     position: fixed;
@@ -21,95 +26,6 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 8px 40px;
-}
-
-.popover__main {
-    position: relative;
-    display: inline;
-  }
-
-/* MENU */
-  
-.popover__wrapper {
-    position: relative;
-    display: inline-block;
-  }
-
-.popover__content {
-    opacity: 0;
-    top: 64px;
-    visibility: hidden;
-    position: absolute;
-    transform: translate(0, 20px);
-    background-color: #fff;
-    padding: 8px;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
-    width: auto;
-    border-radius: 6px;
-}
-
-.popover__content:before {
-  position: absolute;
-  border-radius: 6px;
-  z-index: -1;
-  content: "";
-  right: 0;
-  top: -6px;
-  border-style: solid;
-  border-width: 0 10px 10px 10px;
-  border-color: transparent transparent #fff transparent;
-  transition-duration: 0.3s;
-  transition-property: transform;
-}
-
-.popover__wrapper:hover .popover__content {
-  z-index: 10;
-  opacity: 1;
-  visibility: visible;
-  transform: translate(-64px, -16px);
-  transition: all 0.5s cubic-bezier(0.75, -0.02, 0.2, 0.97);
-}
-
-.controlusers {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 16px;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  border-radius: 50px;
-  text-decoration: none;
-  color:white;
-}
-
-.controlusers:hover {
-    background-color: white;
-    color: #000;
-}
-
-/*Container Atalhos*/
-
-.container-atl {
-    margin-left: 0.5rem;
-    display: inline;
-    align-items: center;
-    justify-content: space-between;
-    color: #efefef;
-    border-radius: 100px;
-    padding: 8px 8px 8px 20px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.container-atl:hover {
-    transform: scale(1.04);
-}
-
-/* Icones do Menu */
-
-.icon {
-    width: 20px;
-    height: 20px;
 }
 
 .row {
@@ -151,16 +67,16 @@ header {
 }
 
 .container-menu {
-    position: fixed; /* ou absolute, dependendo do comportamento desejado */
-    right: 2rem; /* ajuste conforme necessário */
-    top: 5%; /* ajuste conforme necessário */
-    color: #efefef;
+    margin-left: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
     border-radius: 100px;
-    padding: 8px 20px 8px 20px; /* ajuste conforme necessário */
+    padding: 8px 8px 8px 16px;
     cursor: pointer;
     transition: all 0.2s ease;
 }
-
 
 .container-menu:hover {
     transform: scale(1.04);
@@ -179,7 +95,7 @@ header {
 }
 
 .menu-item:hover {
-    background-color: #efefef;
+    background-color: #777575;
 }
 
 .menu-item p{
@@ -194,3 +110,42 @@ header {
     margin-left: 12px;
     border-radius: 100px;
 }
+
+/* MENU */
+  
+  .popover__wrapper {
+    position: relative;
+    display: inline-block;
+  }
+  .popover__content {
+    opacity: 0;
+    top: 64px;
+    visibility: hidden;
+    position: absolute;
+    transform: translate(0, 20px);
+    background-color: #fff;
+    padding: 8px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    width: auto;
+    border-radius: 6px;
+  }
+  .popover__content:before {
+    position: absolute;
+    border-radius: 6px;
+    z-index: -1;
+    content: "";
+    right: 0;
+    top: -6px;
+    border-style: solid;
+    border-width: 0 10px 10px 10px;
+    border-color: transparent transparent #fff transparent;
+    transition-duration: 0.3s;
+    transition-property: transform;
+  }
+  .popover__wrapper:hover .popover__content {
+    z-index: 10;
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-64px, -16px);
+    transition: all 0.5s cubic-bezier(0.75, -0.02, 0.2, 0.97);
+  }
